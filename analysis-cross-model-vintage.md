@@ -15,13 +15,13 @@ The goal is to identify cards that at least one model considers potentially rele
 
 ## Rating Scale
 
-| [Rating](https://scryfall.com/search?q=!%22Rating%22) | Meaning |
+| Rating | Meaning |
 |--------|---------|
-| [Very High](https://scryfall.com/search?q=!%22Very%20High%22) | Likely a staple or frequently played card in competitive Vintage |
-| [High](https://scryfall.com/search?q=!%22High%22) | Clearly playable in at least one established Vintage archetype |
-| [Medium](https://scryfall.com/search?q=!%22Medium%22) | Fringe playable; narrow meta call or niche synergy |
-| [Low](https://scryfall.com/search?q=!%22Low%22) | Very unlikely to see competitive play |
-| [Very Low](https://scryfall.com/search?q=!%22Very%20Low%22) | Effectively unplayable in competitive Vintage |
+| Very High | Likely a staple or frequently played card in competitive Vintage |
+| High | Clearly playable in at least one established Vintage archetype |
+| Medium | Fringe playable; narrow meta call or niche synergy |
+| Low | Very unlikely to see competitive play |
+| Very Low | Effectively unplayable in competitive Vintage |
 
 ## Results Summary
 
