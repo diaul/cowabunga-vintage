@@ -138,6 +138,7 @@ Each model's output is stored in its own folder with a consistent structure:
 | Analysis | Description |
 |----------|-------------|
 | [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Highlights consensus picks and disagreements. |
+| [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. Shows how each LLM rated the 36 cards that have actually been played in competitive Vintage, sorted by tournament appearances. |
 
 ## Further Work
 
