@@ -137,6 +137,12 @@ Each model's output is stored in its own folder with a consistent structure:
 |----------|-------------|
 | [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Highlights consensus picks and disagreements. |
 
+## Further Work
+
+- **Evaluate more models.** Run the same prompt through additional frontier models — Grok (xAI), DeepSeek-R1, Kimi (Moonshot AI), Qwen (Alibaba) — to broaden the comparison and see if a wider panel produces more reliable consensus.
+- **Fine-tune an open-weight model on Vintage data.** Take an open-weight model (e.g. Llama, Mistral, Qwen) and fine-tune it on Vintage-specific data: tournament decklists, metagame reports, card-by-card evaluations from experienced players. A specialized model could outperform general-purpose LLMs that lack deep format knowledge.
+- **Improve the evaluation prompt.** The current prompt is a solid first pass but could be refined — for example by providing example evaluations of known staples and unplayable cards (few-shot), supplying the current Vintage restricted list as context, or asking the model to explicitly compare each card against existing Vintage alternatives at the same mana cost.
+
 ## License
 
 Card data sourced from [MTGJSON](https://mtgjson.com/) under their [license](https://mtgjson.com/license/).
