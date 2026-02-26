@@ -49,48 +49,6 @@ This serves as a reality check: a good evaluator should rate these cards higher 
 | Cultivate | 1 | Medium | Tutors are amplified in restricted Vintage because they effectively find singleton power pieces on demand. It’s plausible as a narrow meta call or synergy piece, but it’s competing with very cheap, high-leverage interaction/hate. | Very Low | Low Vintage potential: tutoring is powerful (combo consistency); Vintage is too fast/powerful for this rate. | Low | Basic land searching is generally too slow; Vintage relies on fetchlands and duals for high-velocity mana fixing. |
 | Hinterland Harbor | 1 | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it's a realistic main-deck or common sideboard card. | Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility), produces mana; Vintage is too fast/powerful for this rate. | Very Low | Too slow and fair for Vintage; high mana cost or low impact on the stack makes it unplayable in a format dominated by fast mana and efficient interaction. |
 
-## Quantitative Summary
-
-### Detection rate on tournament-played cards (excluding basic lands)
-
-How many of the 31 non-basic cards with real Vintage play did each model rate Medium or above?
-
-| Model | Medium+ | High+ | Avg Score (1-5) |
-|-------|--------:|------:|----------------:|
-| ChatGPT 5.2 Thinking | 25/31 (81%) | 15/31 (48%) | 3.35 |
-| Gemini 2.5 Pro Thinking | 6/31 (19%) | 6/31 (19%) | 1.97 |
-| Claude Opus 4.6 | 0/31 (0%) | 0/31 (0%) | 1.32 |
-
-### Accuracy on top staples (>1,000 tournament appearances, excluding basics)
-
-These 9 cards are well-established Vintage regulars: Brainstorm, Sol Ring, Dark Ritual, Arcbound Ravager, Assassin's Trophy, Underworld Breach, Undercity Sewers, Path to Exile, Supreme Verdict.
-
-| Model | Avg Score (1-5) | Very High | High | Medium | Low | Very Low |
-|-------|----------------:|----------:|-----:|-------:|----:|---------:|
-| ChatGPT 5.2 Thinking | 3.78 | 3 | 2 | 3 | 1 | 0 |
-| Gemini 2.5 Pro Thinking | 3.00 | 3 | 1 | 0 | 2 | 3 |
-| Claude Opus 4.6 | 1.22 | 0 | 0 | 0 | 2 | 7 |
-
-### False negatives: cards with >100 tournament appearances rated Very Low
-
-A critical mistake — rating a proven Vintage card as "effectively unplayable":
-
-| Model | Count | Cards |
-|-------|------:|-------|
-| ChatGPT 5.2 Thinking | 0 | — |
-| Gemini 2.5 Pro Thinking | 4 | Arcbound Ravager (3,314), Supreme Verdict (1,306), Shadowspear (500), Chromatic Lantern (131) |
-| Claude Opus 4.6 | 11 | Brainstorm (31,347), Dark Ritual (4,658), Arcbound Ravager (3,314), Assassin's Trophy (2,981), Underworld Breach (2,966), Path to Exile (1,446), Supreme Verdict (1,306), City of Brass (804), Umezawa's Jitte (609), Shadowspear (500), Chromatic Lantern (131) |
-
-### False positives: rated High+ but never played in a Vintage tournament
-
-Cards the model was bullish on but that have zero recorded tournament appearances:
-
-| Model | Count | Notes |
-|-------|------:|-------|
-| ChatGPT 5.2 Thinking | 35 | Highly inflated — includes basic lands with TMNT art, tap lands, Evolving Wilds variants, and many new TMNT cards with no Vintage pedigree |
-| Gemini 2.5 Pro Thinking | 9 | Mostly commander-oriented lands (Thriving cycle, Path of Ancestry, Grand Coliseum) incorrectly rated Very High |
-| Claude Opus 4.6 | 0 | No false positives — but only because it rated virtually everything Low or Very Low |
-
 ## Conclusions
 
 **ChatGPT 5.2 Thinking is the best overall evaluator**, but with significant caveats:
