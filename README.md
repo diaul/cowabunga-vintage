@@ -138,7 +138,7 @@ Each model's output is stored in its own folder with a consistent structure:
 | Analysis | Description |
 |----------|-------------|
 | [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Very low inter-model consensus — ChatGPT casts a wide net (169 cards Medium+), Gemini is selective but precise (16 cards), Claude is over-conservative (7 cards, none above Medium). |
-| [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 2.5 Pro was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). **Best approach: ChatGPT as primary screener, Gemini as confidence signal, human review for final call.** |
+| [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 2.5 Pro was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). |
 
 ## Further Work
 
