@@ -107,6 +107,23 @@ IMPORTANT MARKDOWN RULES:
 
 </details>
 
+## Results
+
+Each model's output is stored in its own folder with a consistent structure:
+
+```
+<model-name>/
+  vintage-eval.csv   # Original card data + vintage_playability & reasoning columns
+  vintage-eval.md    # Markdown table with Scryfall links, ratings, and reasoning
+```
+
+### Models evaluated so far
+
+| Folder | Model | Provider |
+|--------|-------|----------|
+| `claude-opus-4.6/` | Claude Opus 4.6 | Anthropic |
+| `chatgpt-5.2-thinking/` | ChatGPT 5.2 Thinking | OpenAI |
+
 ## License
 
 Card data sourced from [MTGJSON](https://mtgjson.com/) under their [license](https://mtgjson.com/license/).
