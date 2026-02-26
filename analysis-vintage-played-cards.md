@@ -47,4 +47,67 @@ This serves as a reality check: a good evaluator should rate these cards higher 
 | Rootbound Crag | 1 | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it’s a realistic main-deck or common sideboard card. | Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility), produces mana; Vintage is too fast/powerful for this rate. | Very Low | Too slow and fair for Vintage; high mana cost or low impact on the stack makes it unplayable in a format dominated by fast mana and efficient interaction. |
 | Command Tower | 1 | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it’s a realistic main-deck or common sideboard card. | Very Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility); Vintage is too fast/powerful for this rate. | Very High | Zero-mana acceleration is the backbone of Vintage, enabling explosive turns and powering out threats before the opponent can respond. |
 | Cultivate | 1 | Medium | Tutors are amplified in restricted Vintage because they effectively find singleton power pieces on demand. It’s plausible as a narrow meta call or synergy piece, but it’s competing with very cheap, high-leverage interaction/hate. | Very Low | Low Vintage potential: tutoring is powerful (combo consistency); Vintage is too fast/powerful for this rate. | Low | Basic land searching is generally too slow; Vintage relies on fetchlands and duals for high-velocity mana fixing. |
-| Hinterland Harbor | 1 | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it’s a realistic main-deck or common sideboard card. | Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility), produces mana; Vintage is too fast/powerful for this rate. | Very Low | Too slow and fair for Vintage; high mana cost or low impact on the stack makes it unplayable in a format dominated by fast mana and efficient interaction. |
+| Hinterland Harbor | 1 | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it's a realistic main-deck or common sideboard card. | Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility), produces mana; Vintage is too fast/powerful for this rate. | Very Low | Too slow and fair for Vintage; high mana cost or low impact on the stack makes it unplayable in a format dominated by fast mana and efficient interaction. |
+
+## Quantitative Summary
+
+### Detection rate on tournament-played cards (excluding basic lands)
+
+How many of the 31 non-basic cards with real Vintage play did each model rate Medium or above?
+
+| Model | Medium+ | High+ | Avg Score (1-5) |
+|-------|--------:|------:|----------------:|
+| ChatGPT 5.2 Thinking | 25/31 (81%) | 15/31 (48%) | 3.35 |
+| Gemini 2.5 Pro Thinking | 6/31 (19%) | 6/31 (19%) | 1.97 |
+| Claude Opus 4.6 | 0/31 (0%) | 0/31 (0%) | 1.32 |
+
+### Accuracy on top staples (>1,000 tournament appearances, excluding basics)
+
+These 9 cards are well-established Vintage regulars: Brainstorm, Sol Ring, Dark Ritual, Arcbound Ravager, Assassin's Trophy, Underworld Breach, Undercity Sewers, Path to Exile, Supreme Verdict.
+
+| Model | Avg Score (1-5) | Very High | High | Medium | Low | Very Low |
+|-------|----------------:|----------:|-----:|-------:|----:|---------:|
+| ChatGPT 5.2 Thinking | 3.78 | 3 | 2 | 3 | 1 | 0 |
+| Gemini 2.5 Pro Thinking | 3.00 | 3 | 1 | 0 | 2 | 3 |
+| Claude Opus 4.6 | 1.22 | 0 | 0 | 0 | 2 | 7 |
+
+### False negatives: cards with >100 tournament appearances rated Very Low
+
+A critical mistake — rating a proven Vintage card as "effectively unplayable":
+
+| Model | Count | Cards |
+|-------|------:|-------|
+| ChatGPT 5.2 Thinking | 0 | — |
+| Gemini 2.5 Pro Thinking | 4 | Arcbound Ravager (3,314), Supreme Verdict (1,306), Shadowspear (500), Chromatic Lantern (131) |
+| Claude Opus 4.6 | 11 | Brainstorm (31,347), Dark Ritual (4,658), Arcbound Ravager (3,314), Assassin's Trophy (2,981), Underworld Breach (2,966), Path to Exile (1,446), Supreme Verdict (1,306), City of Brass (804), Umezawa's Jitte (609), Shadowspear (500), Chromatic Lantern (131) |
+
+### False positives: rated High+ but never played in a Vintage tournament
+
+Cards the model was bullish on but that have zero recorded tournament appearances:
+
+| Model | Count | Notes |
+|-------|------:|-------|
+| ChatGPT 5.2 Thinking | 35 | Highly inflated — includes basic lands with TMNT art, tap lands, Evolving Wilds variants, and many new TMNT cards with no Vintage pedigree |
+| Gemini 2.5 Pro Thinking | 9 | Mostly commander-oriented lands (Thriving cycle, Path of Ancestry, Grand Coliseum) incorrectly rated Very High |
+| Claude Opus 4.6 | 0 | No false positives — but only because it rated virtually everything Low or Very Low |
+
+## Conclusions
+
+**ChatGPT 5.2 Thinking is the best overall evaluator**, but with significant caveats:
+
+1. **Best at detecting playable cards.** ChatGPT correctly flagged 81% of tournament-played cards as Medium or above, and had **zero false negatives** on cards with >100 appearances. It is the only model that recognized every major Vintage staple in the set (Brainstorm, Sol Ring, Underworld Breach, Dark Ritual).
+
+2. **Highest false positive rate.** ChatGPT rated 35 cards as High or above that have never appeared in a Vintage tournament. It has a clear tendency to over-rate — particularly lands (giving basic lands and tap lands "High" ratings) and applying generic reasoning templates ("fast mana matters in Vintage") to cards where it doesn't apply. This makes its output noisy: you get all the real hits, but buried in a lot of false alarms.
+
+3. **Gemini 2.5 Pro Thinking is the most precise on top staples.** When Gemini rates something Very High, it's almost always correct (Brainstorm, Sol Ring, Underworld Breach). However, it misses too many mid-tier playables (Arcbound Ravager, Assassin's Trophy, Path to Exile) and has a bizarre failure mode where it rates commander-only lands as Very High in Vintage. Its overall recall (19%) is too low to be useful as a standalone evaluator.
+
+4. **Claude Opus 4.6 failed this task.** With 0% detection rate on proven Vintage cards and 11 egregious false negatives (including Brainstorm and Underworld Breach), Claude's evaluation is not usable. The model appears to have applied a blanket "Vintage is too fast/powerful for this rate" reasoning to nearly every card without actually analyzing the card text. This suggests the model either didn't recognize the reprints or has a systematic bias toward conservative ratings.
+
+### Practical recommendation
+
+For the use case of screening a new set for Vintage-playable cards:
+
+- **Use ChatGPT 5.2 as the primary screener** — it catches everything, but produces a long list that needs manual pruning.
+- **Use Gemini 2.5 Pro as a confidence signal** — if Gemini also rates a card High+, it's very likely a real hit.
+- **Claude Opus 4.6 is not recommended** for this task in its current form.
+- **None of the models replace human expertise** — they can narrow down a 500-card set to ~30-50 candidates, but the final evaluation still requires a player who knows the format.
