@@ -61,11 +61,3 @@ This serves as a reality check: a good evaluator should rate these cards higher 
 
 4. **Claude Opus 4.6 failed this task.** With 0% detection rate on proven Vintage cards and 11 egregious false negatives (including Brainstorm and Underworld Breach), Claude's evaluation is not usable. The model appears to have applied a blanket "Vintage is too fast/powerful for this rate" reasoning to nearly every card without actually analyzing the card text. This suggests the model either didn't recognize the reprints or has a systematic bias toward conservative ratings.
 
-### Practical recommendation
-
-For the use case of screening a new set for Vintage-playable cards:
-
-- **Use ChatGPT 5.2 as the primary screener** — it catches everything, but produces a long list that needs manual pruning.
-- **Use Gemini 2.5 Pro as a confidence signal** — if Gemini also rates a card High+, it's very likely a real hit.
-- **Claude Opus 4.6 is not recommended** for this task in its current form.
-- **None of the models replace human expertise** — they can narrow down a 500-card set to ~30-50 candidates, but the final evaluation still requires a player who knows the format.
