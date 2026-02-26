@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.svg" alt="Cowabunga Vintage" width="500"/>
+</p>
+
 # Cowabunga Vintage
 
 Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja Turtles** Magic: The Gathering sets using multiple LLMs.
