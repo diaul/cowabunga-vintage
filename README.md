@@ -144,6 +144,12 @@ Each model's output is stored in its own folder with a consistent structure:
 | [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Very low inter-model consensus — ChatGPT casts a wide net (169 cards Medium+), Gemini is selective but precise (16 cards), Claude is over-conservative (7 cards, none above Medium). |
 | [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 2.5 Pro was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). |
 
+## Conclusions
+
+The level of disagreement between models was surprising. I expected some variation, but not three models producing fundamentally incompatible evaluations of the same cards. Even more concerning, current frontier LLMs fail to identify cards that have been Vintage staples for years — Brainstorm, Sol Ring, and Underworld Breach were rated "Very Low" or "Low" by at least one model. These are not edge cases; they are among the most played cards in the format's history.
+
+General-purpose LLMs clearly lack the specialized knowledge needed for reliable Vintage card evaluation. The most promising paths forward are fine-tuning an open-weight model on Vintage-specific data (tournament results, expert commentary, gameplay analysis) or training a dedicated deep neural network from scratch on structured play statistics. Until then, LLMs can serve as a rough first filter, but they cannot replace a player who knows the format.
+
 ## Further Work
 
 - **Evaluate more models.** Run the same prompt through additional frontier models — Grok (xAI), DeepSeek-R1, Kimi (Moonshot AI), Qwen (Alibaba) — to broaden the comparison and see if a wider panel produces more reliable consensus.
