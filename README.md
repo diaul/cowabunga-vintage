@@ -2,9 +2,13 @@
 
 Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja Turtles** Magic: The Gathering sets using multiple LLMs.
 
+## Why
+
+New Magic sets keep getting larger and more frequent. I used to evaluate every single card by hand to find Vintage-playable gems, but that's no longer feasible. This project explores whether LLMs can save time by doing a first pass over an entire set and surfacing the cards worth a closer look.
+
 ## Goal
 
-The core hypothesis of this project is to find out whether today's top public LLMs can **concretely and effectively analyze card playability** in a competitive Magic: The Gathering format.
+The core hypothesis is to find out whether today's top public LLMs can **concretely and effectively analyze card playability** in a competitive Magic: The Gathering format.
 
 The TMNT Universes Beyond release introduced hundreds of new cards across multiple sets. This project feeds the complete card pool to different Large Language Models and asks each one to rate every card's competitive Vintage playability — from "very high" (likely staple) to "very low" (effectively unplayable).
 
