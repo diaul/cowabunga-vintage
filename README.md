@@ -4,9 +4,11 @@ Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja
 
 ## Goal
 
+The core hypothesis of this project is to find out whether today's top public LLMs can **concretely and effectively analyze card playability** in a competitive Magic: The Gathering format.
+
 The TMNT Universes Beyond release introduced hundreds of new cards across multiple sets. This project feeds the complete card pool to different Large Language Models and asks each one to rate every card's competitive Vintage playability — from "very high" (likely staple) to "very low" (effectively unplayable).
 
-By comparing evaluations across models we can surface consensus picks, spot disagreements, and build a shortlist of cards worth testing in the format.
+We chose Vintage because it is the format we know best, but the same approach can be applied to any other format (Legacy, Modern, Pioneer, etc.). By comparing evaluations across models we can surface consensus picks, spot disagreements, and build a shortlist of cards worth testing in the format.
 
 ## Sets Covered
 
