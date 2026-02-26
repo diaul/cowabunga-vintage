@@ -6,6 +6,10 @@
 
 Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja Turtles** Magic: The Gathering sets using multiple LLMs.
 
+## TL;DR
+
+We asked three frontier LLMs (ChatGPT 5.2, Claude Opus 4.6, Gemini 2.5 Pro) to evaluate every card in the TMNT sets for Vintage playability. The results are poor: the models show massive disagreement with each other and fail to recognize cards that have been Vintage staples for years (Brainstorm, Sol Ring, Underworld Breach). Current general-purpose LLMs are not reliable for competitive format card evaluation.
+
 ## Why
 
 New Magic sets keep getting larger and more frequent. I used to evaluate every single card by hand to find Vintage-playable gems, but that's no longer feasible. This project explores whether LLMs can save time by doing a first pass over an entire set and surfacing the cards worth a closer look.
