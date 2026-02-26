@@ -9,7 +9,7 @@ The goal is to identify cards that at least one model considers potentially rele
 ## Methodology
 
 - **Input:** 519 cards (including tokens) from sets TMT, TMC, FTMC, and PZA.
-- **Models:** ChatGPT 5.2 Thinking (OpenAI), Claude Opus 4.6 (Anthropic), Gemini 2.5 Pro Thinking (Google).
+- **Models:** ChatGPT 5.2 Thinking (OpenAI), Claude Opus 4.6 (Anthropic), Gemini 3 Thinking (Google).
 - **Filter:** Only cards rated **Medium**, **High**, or **Very High** by at least one model are included below.
 - **Sorting:** Rows are sorted by the highest rating any model gave, then alphabetically by card name.
 
@@ -27,12 +27,12 @@ The goal is to identify cards that at least one model considers potentially rele
 
 - **129 cards** were rated Medium or above by at least one model out of 519 total.
 - ChatGPT 5.2 was the most generous (7 Very High, 70 High, 92 Medium).
-- Gemini 2.5 Pro was selective but confident on known staples (13 Very High, 2 High, 1 Medium).
+- Gemini 3 was selective but confident on known staples (13 Very High, 2 High, 1 Medium).
 - Claude Opus 4.6 was the most conservative (0 Very High, 0 High, 7 Medium).
 
 ## Comparison Table
 
-| Set | Card Name | ChatGPT 5.2 | ChatGPT 5.2 Reasoning | Claude Opus 4.6 | Claude Opus 4.6 Reasoning | Gemini 2.5 Pro | Gemini 2.5 Pro Reasoning |
+| Set | Card Name | ChatGPT 5.2 | ChatGPT 5.2 Reasoning | Claude Opus 4.6 | Claude Opus 4.6 Reasoning | Gemini 3 | Gemini 3 Reasoning |
 |-----|-----------|-------------|----------------------|-----------------|--------------------------|----------------|--------------------------|
 | TMC | [Ash Barrens](https://scryfall.com/search?q=!%22Ash%20Barrens%22+set%3Atmc) | Very High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it’s a realistic main-deck or common sideboard card. | Medium | Some Vintage potential (niche/sideboard): lands are inherently efficient in Vintage (mana bases / utility), produces mana, tutoring is powerful (combo consistency). | Low | Basic land searching is generally too slow; Vintage relies on fetchlands and duals for high-velocity mana fixing. |
 | TMC | [Big Apple, 3 a.m.](https://scryfall.com/search?q=!%22Big%20Apple%2C%203%20a.m.%22+set%3Atmc) | High | Fast mana matters a lot in Vintage because it compresses the game and enables broken sequences ahead of schedule. This effect lines up with established Vintage engines/archetypes, so it’s a realistic main-deck or common sideboard card. | Very Low | Low Vintage potential: lands are inherently efficient in Vintage (mana bases / utility); Vintage is too fast/powerful for this rate. | Very High | Zero-mana acceleration is the backbone of Vintage, enabling explosive turns and powering out threats before the opponent can respond. |
@@ -170,7 +170,7 @@ The three models show vastly different calibration when evaluating the same card
 
 - **ChatGPT 5.2 Thinking** cast the widest net — 169 cards rated Medium or above (33% of the pool). Its reasoning often applies correct Vintage concepts (fast mana, stack interaction, tutoring) but recycles template phrases across many cards, leading to inflated ratings for cards that don't warrant them (e.g. basic lands, tap lands, and commander-oriented cards all receiving "High").
 
-- **Gemini 2.5 Pro Thinking** was highly selective — only 16 cards rated Medium or above (3%). When it gave a high rating, the reasoning was typically card-specific and accurate (correctly identifying Brainstorm, Sol Ring, Underworld Breach as format staples). However, it has a blind spot for commander-focused lands, rating several as Very High despite having no Vintage relevance.
+- **Gemini 3 Thinking** was highly selective — only 16 cards rated Medium or above (3%). When it gave a high rating, the reasoning was typically card-specific and accurate (correctly identifying Brainstorm, Sol Ring, Underworld Breach as format staples). However, it has a blind spot for commander-focused lands, rating several as Very High despite having no Vintage relevance.
 
 - **Claude Opus 4.6** was the most conservative — only 7 cards rated Medium, none higher. The model systematically applied a "Vintage is too fast/powerful for this rate" dismissal to nearly every card, including proven staples like Brainstorm and Sol Ring. This suggests the model failed to recognize reprints or has a fundamental calibration issue for this task.
 

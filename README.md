@@ -8,7 +8,7 @@ Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja
 
 ## TL;DR
 
-We asked three frontier LLMs (ChatGPT 5.2, Claude Opus 4.6, Gemini 2.5 Pro) to evaluate every card in the TMNT sets for Vintage playability. The results are poor: the models show massive disagreement with each other and fail to recognize cards that have been Vintage staples for years (Brainstorm, Sol Ring, Underworld Breach). Current general-purpose LLMs are not reliable for competitive format card evaluation.
+We asked three frontier LLMs (ChatGPT 5.2, Claude Opus 4.6, Gemini 3) to evaluate every card in the TMNT sets for Vintage playability. The results are poor: the models show massive disagreement with each other and fail to recognize cards that have been Vintage staples for years (Brainstorm, Sol Ring, Underworld Breach). Current general-purpose LLMs are not reliable for competitive format card evaluation.
 
 ## Why
 
@@ -139,14 +139,14 @@ Each model's output is stored in its own folder with a consistent structure:
 |--------|-------|----------|
 | `claude-opus-4.6/` | Claude Opus 4.6 | Anthropic |
 | `chatgpt-5.2-thinking/` | ChatGPT 5.2 Thinking | OpenAI |
-| `gemini-2.5-pro-thinking/` | Gemini 2.5 Pro Thinking | Google |
+| `gemini-3-thinking/` | Gemini 3 Thinking | Google |
 
 ### Analyses
 
 | Analysis | Description |
 |----------|-------------|
-| [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Very low inter-model consensus — ChatGPT 5.2 casts a wide net (169 cards Medium+), Gemini 2.5 Pro is selective but precise (16 cards), Claude Opus 4.6 is over-conservative (7 cards, none above Medium). |
-| [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 2.5 Pro was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). |
+| [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Very low inter-model consensus — ChatGPT 5.2 casts a wide net (169 cards Medium+), Gemini 3 is selective but precise (16 cards), Claude Opus 4.6 is over-conservative (7 cards, none above Medium). |
+| [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 3 was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). |
 
 ## Conclusions
 
