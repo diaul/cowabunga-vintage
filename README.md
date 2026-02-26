@@ -27,6 +27,8 @@ We chose Vintage because it is the format we know best, but the same approach ca
 
 `TMNT_cards.csv` was generated from [MTGJSON](https://mtgjson.com/)'s **AllPrintings.json** — the community-maintained open dataset of every Magic: The Gathering printing. The CSV contains 519 rows (cards + tokens) with fields such as name, mana cost, type, rules text, colors, keywords, rarity, and more.
 
+`vintage_played_cards.txt` contains every card that has appeared at least once in a Vintage tournament decklist, extracted from all published MTGO Vintage tournament results. Each line lists the total number of appearances across all events followed by the card name, sorted by frequency (4,042 unique cards). This serves as a ground-truth reference for what actually sees play in the format.
+
 ## Prompt
 
 The following prompt is used when submitting the CSV to each LLM for evaluation:
