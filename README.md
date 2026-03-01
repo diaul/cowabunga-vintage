@@ -141,6 +141,10 @@ Each model's output is stored in its own folder with a consistent structure:
 | `chatgpt-5.2-thinking/` | ChatGPT 5.2 Thinking | OpenAI |
 | `gemini-3-thinking/` | Gemini 3 Thinking | Google |
 
+### Models that failed to complete the task
+
+**Grok (xAI)** was also tested but could not complete the evaluation. Despite multiple follow-up prompts, the model consistently returned partial results and refused to provide the full output covering all 519 cards. No amount of prompt engineering or chunking was able to get Grok to generate a complete evaluation file, so it was excluded from the analysis.
+
 ### Analyses
 
 | Analysis | Description |
@@ -156,7 +160,7 @@ General-purpose LLMs clearly lack the specialized knowledge needed for reliable 
 
 ## Further Work
 
-- **Evaluate more models.** Run the same prompt through additional frontier models — Grok (xAI), DeepSeek-R1, Kimi (Moonshot AI), Qwen (Alibaba) — to broaden the comparison and see if a wider panel produces more reliable consensus.
+- **Evaluate more models.** Run the same prompt through additional frontier models — DeepSeek-R1, Kimi (Moonshot AI), Qwen (Alibaba) — to broaden the comparison and see if a wider panel produces more reliable consensus.
 - **Fine-tune an open-weight model on Vintage data.** Take an open-weight model (e.g. Llama, Mistral, Qwen) and fine-tune it on Vintage-specific data: tournament decklists, metagame reports, card-by-card evaluations from experienced players. An additional data source could be Vintage gameplay videos and streams from YouTube/Twitch — transcribing commentary and game state analysis to generate training pairs that capture how experienced players reason about card choices in real time. A specialized model could outperform general-purpose LLMs that lack deep format knowledge.
 - **Train a dedicated neural network from scratch.** Instead of adapting an LLM, build a purpose-built deep neural network trained on structured Vintage play statistics — card inclusion rates across tournaments, win-rate deltas when a card is in the deck, metagame share over time, and matchup data. A model designed around tabular card features and historical performance data could learn patterns that language-based approaches miss entirely.
 - **Improve the evaluation prompt.** The current prompt is a solid first pass but could be refined — for example by providing example evaluations of known staples and unplayable cards (few-shot), supplying the current Vintage restricted list as context, or asking the model to explicitly compare each card against existing Vintage alternatives at the same mana cost.
