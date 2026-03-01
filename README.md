@@ -151,6 +151,7 @@ Each model's output is stored in its own folder with a consistent structure:
 |----------|-------------|
 | [Cross-Model Vintage Playability Comparison](analysis-cross-model-vintage.md) | Side-by-side ratings from all three models for the 129 cards rated Medium or above by at least one LLM. Very low inter-model consensus — ChatGPT 5.2 casts a wide net (169 cards Medium+), Gemini 3 is selective but precise (16 cards), Claude Opus 4.6 is over-conservative (7 cards, none above Medium). |
 | [TMNT Cards With Actual Vintage Tournament Play](analysis-vintage-played-cards.md) | Cross-references TMNT cards against real MTGO tournament data. 36 cards have actual tournament history — ChatGPT 5.2 detected 81% of them (best recall, zero critical misses), Gemini 3 was precise on top staples but missed mid-tier cards (19%), Claude Opus 4.6 failed (0% detection). |
+| [ChatGPT 5.2 Consistency Analysis](analysis-chatgpt-consistency.md) | Compares two identical runs of ChatGPT 5.2 Thinking on the same input and prompt (2026-02-26 vs 2026-03-01). 50% of ratings changed between runs, with 139 downgrades and 51 upgrades. Brainstorm dropped from Very High to Low. Even cards with unchanged ratings had completely different reasoning text. The model's evaluations are not deterministic. |
 
 ## Conclusions
 
