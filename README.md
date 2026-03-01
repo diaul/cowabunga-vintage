@@ -8,7 +8,7 @@ Evaluating the Vintage playability of every card from the **Teenage Mutant Ninja
 
 ## TL;DR
 
-We asked three frontier LLMs (ChatGPT 5.2, Claude Opus 4.6, Gemini 3) to evaluate every card in the TMNT sets for Vintage playability. The results are poor: the models show massive disagreement with each other and fail to recognize cards that have been Vintage staples for years (Brainstorm, Sol Ring, Underworld Breach). Current general-purpose LLMs are not reliable for competitive format card evaluation.
+We asked three frontier LLMs (ChatGPT 5.2, Claude Opus 4.6, Gemini 3) to evaluate every card in the TMNT sets for Vintage playability. The results are poor: the models show massive disagreement with each other and fail to recognize cards that have been Vintage staples for years (Brainstorm, Sol Ring, Underworld Breach). Worse, running the same model twice on the same input produces completely different results — ChatGPT 5.2 changed 50% of its ratings between two identical runs, downgrading Brainstorm from Very High to Low. Current general-purpose LLMs are not reliable for competitive format card evaluation.
 
 ## Why
 
